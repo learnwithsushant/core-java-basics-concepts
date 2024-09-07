@@ -1,8 +1,6 @@
 package learn.core.java.concepts.linkedin.learning.practicecollections;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class TrickyCollectionProblems {
@@ -14,7 +12,9 @@ public class TrickyCollectionProblems {
 
    //     System.out.println("Average >"+calculateMean(Arrays.asList(-1,23,11,34,4,21)));
 
-        System.out.println("Words less than 5 char >"+returnWordsLessThan5char("I am a hard worker coder and developed my coding skills with lots of efforts"));
+   //     System.out.println("Words less than 5 char >"+returnWordsLessThan5char("I am a hard worker coder and developed my coding skills with lots of efforts"));
+
+        System.out.println("Index with required sum> "+ returnIndices(Arrays.asList(0,1,5,3,3,2,4),6));
     }
 
     public static int countOfWords(String statement, String word){
@@ -43,8 +43,23 @@ public class TrickyCollectionProblems {
 
     }
 
-    public static List<Integer> returnIndices(List list,int sum){
+    public static Set<Integer> returnIndices(List<Integer> list,int sum){
 
-        return null;
+        Set<Integer> indexes = new HashSet<>();
+
+        Map<Integer,Integer> sourceMap = new HashMap<>();
+
+        for (int i = 0; i< list.size();i++){
+            sourceMap.put(list.get(i),i);
+        }
+
+        for (int i = 0; i< list.size();i++){
+            int targetIndex = sum-list.get(i);
+            if(sourceMap.containsKey(targetIndex) && sourceMap.get(targetIndex)!=i){
+                indexes.add(i);
+                indexes.add(sourceMap.get(targetIndex));
+            }
+        }
+        return indexes;
     }
 }
