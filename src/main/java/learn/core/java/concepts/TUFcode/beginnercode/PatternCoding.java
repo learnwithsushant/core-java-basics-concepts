@@ -4,10 +4,42 @@ public class PatternCoding {
 
     public static void main(String[] args) {
 
-        pattern8(5);
-
+     //   pattern8(5);
      //   pattern9(2);
+     //   pattern10(5);
+        pattern11(6);
     }
+
+    private static void pattern11(int n) {
+        for(int i = 0;i<n;i++){
+            int start = 0;
+            if(i%2==0) {
+                start = 1;
+            }
+            for(int j = 0 ; j<=i; j++){
+                System.out.print(start);
+                start = 1-start;
+            }
+            System.out.println("");
+        }
+    }
+
+    private static void pattern10(int n) {
+        for(int i = 0;i<n;i++){
+            for(int j = 0 ; j<=i; j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        for(int i=n-1;i>0;i--){
+            for(int j=i;j>0;j--){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
+
 
     private static void pattern8(int n) {
 
@@ -23,17 +55,6 @@ public class PatternCoding {
     }
 
     private static void pattern9(int rownum) {
-
-        /*for(int r=rownum;r>1;r--){
-            for(int c=1;c<r;c++){
-                System.out.print("+");
-            }
-            for(int p = 1;p>r-1;p--){
-                System.out.print("*");
-            }
-
-            System.out.println();
-        }*/
 
         for(int r=0;r<rownum;r++){
             for(int p1=1;p1<rownum-r;p1++){
@@ -59,5 +80,6 @@ public class PatternCoding {
 
             System.out.println();
         }
-    }
+
+            }
 }
