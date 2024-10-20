@@ -7,7 +7,24 @@ public class PatternCoding {
      //   pattern8(5);
      //   pattern9(2);
      //   pattern10(5);
-        pattern11(6);
+      //  pattern11(6);
+        pattern12(5);
+    }
+
+    private static void pattern12(int n) {
+
+        for(int i = 1;i<=n;i++){
+            for(int j = 1 ; j<=n; j++){
+                if(j<=i) System.out.print(j);
+                else System.out.print(" ");
+            }
+            for(int j = n ; j>=1; j--){
+                if(j<=i) System.out.print(j);
+                else System.out.print(" ");
+            }
+
+            System.out.println("");
+        }
     }
 
     private static void pattern11(int n) {
