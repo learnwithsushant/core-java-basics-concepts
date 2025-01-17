@@ -1,4 +1,4 @@
-package learn.core.java.concepts.linkedin.learning.practicecollections;
+package learn.core.java.concepts.practicecollections.linkedin.learning;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -14,7 +14,12 @@ public class TrickyCollectionProblems {
 
    //     System.out.println("Words less than 5 char >"+returnWordsLessThan5char("I am a hard worker coder and developed my coding skills with lots of efforts"));
 
-        System.out.println("Index with required sum> "+ returnIndices(Arrays.asList(0,1,5,3,3,2,4),6));
+  //      System.out.println("Index with required sum> "+ returnIndices(Arrays.asList(0,1,5,3,3,2,4),6));
+
+   //     printPattern2(4);
+
+        removeStr();
+
     }
 
     public static int countOfWords(String statement, String word){
@@ -61,5 +66,44 @@ public class TrickyCollectionProblems {
             }
         }
         return indexes;
+    }
+
+    public static void printPattern1(int n){
+
+        for(int i = 1 ; i<=n;i++){
+            for(int j=n;j>=1;j--){
+                if(j<=i){
+                    System.out.print("*");
+                }else System.out.print(" ");
+
+            }
+            for(int k=1;k<n;k++){
+                if(k<i){
+                    System.out.print("*");
+                }
+            }
+            System.out.println();
+        }
+
+    }
+
+    public static void printPattern2(int n){
+
+        for(int i=0;i<n;i++){
+           for(int j=i;j>0;j--){
+               System.out.print(" ");
+           }
+           for(int k = 0;k<((2*n-1)-(2*i));k++){
+               System.out.print("*");
+           }
+            System.out.println();
+        }
+
+    }
+
+    public static void removeStr(){
+        List<String> rawString = Arrays.asList("somethingabc","noabc","qwabcvd","abcdefg");
+
+        rawString.stream().filter(e->e.endsWith("abc")).forEach(System.out::println);
     }
 }
