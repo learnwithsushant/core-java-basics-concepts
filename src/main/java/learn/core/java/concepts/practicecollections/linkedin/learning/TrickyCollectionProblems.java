@@ -1,9 +1,7 @@
-package learn.core.java.concepts.linkedin.learning.practicecollections;
+package learn.core.java.concepts.practicecollections.linkedin.learning;
 
 import java.util.*;
 import java.util.stream.Collectors;
-
-import static learn.core.java.concepts.linkedin.learning.practicecollections.TrickyCollectionProblems.*;
 
 public class TrickyCollectionProblems {
     public static void main(String[] args) {
@@ -18,7 +16,9 @@ public class TrickyCollectionProblems {
 
   //      System.out.println("Index with required sum> "+ returnIndices(Arrays.asList(0,1,5,3,3,2,4),6));
 
-        printPattern2(4);
+   //     printPattern2(4);
+
+        removeStr();
 
     }
 
@@ -99,5 +99,11 @@ public class TrickyCollectionProblems {
             System.out.println();
         }
 
+    }
+
+    public static void removeStr(){
+        List<String> rawString = Arrays.asList("somethingabc","noabc","qwabcvd","abcdefg");
+
+        rawString.stream().filter(e->e.endsWith("abc")).forEach(System.out::println);
     }
 }
