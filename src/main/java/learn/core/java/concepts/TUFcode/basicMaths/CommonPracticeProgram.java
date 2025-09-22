@@ -4,7 +4,8 @@ public class CommonPracticeProgram {
     public static void main(String[] args) {
        // System.out.println("Factorial of given num >"+ calTheFactorial(5));
        // System.out.println("Check if armstrong >>>> "+isAmstrongNumber(370));
-        System.out.println("Check perfect number >>>>>>"+checkPerfectNumber(28));
+
+        System.out.println("Check for Prime >>"+ checkForPrimeNumber(17));
     }
 
     private static int calTheFactorial(int n) {
@@ -54,4 +55,16 @@ public class CommonPracticeProgram {
         return sum == n;
     }
 
+    private static boolean checkForPrimeNumber(int n){
+
+
+        if(n==1)
+            return false;
+
+        for(int i = 2 ; i< n;i++){
+            if(n%2==0)
+                return  false;
+        }
+        return true;
+    }
 }
