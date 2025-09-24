@@ -2,12 +2,12 @@ package learn.core.java.concepts.TUFcode.basicMaths;
 
 public class GCDofTwoNumbers {
     public static void main(String[] args) {
-        System.out.println("GCD of two numbers is by normal Way >>"+calculateGCDByNormalWay(8,24));
+//        System.out.println("GCD of two numbers is by normal Way >>"+calculateGCDByNormalWay(8,24));
+//
+//        System.out.println("GCD of two numbers is by reverse Way >>"+calculateGCDByReverseWay(15,90));
 
-        System.out.println("GCD of two numbers is by reverse Way >>"+calculateGCDByReverseWay(15,90));
 
-
-        System.out.println("GCD of two numbers is by Euclidean Algorithm >>"+calculateByEuclideanAlgorithm(88,12));
+        System.out.println("GCD of two numbers is by Euclidean Algorithm >>"+calculateByEuclideanAlgorithm(5,3));
     }
 
     private static int calculateGCDByNormalWay(int n1,int n2){
