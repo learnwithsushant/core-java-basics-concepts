@@ -1,7 +1,4 @@
-package learn.core.java.concepts.TUFcode;
-
-import java.util.Arrays;
-import java.util.stream.IntStream;
+package learn.core.java.concepts.TUFcode.basicaArrays;
 
 public class BasicArray {
     public static void main(String[] args) {
@@ -21,12 +18,19 @@ public class BasicArray {
 
     private static void sumOfArrayElementsUsingStreams(){
         int[] arr = {10, 20, 30, 40, 50};
+        int sum = 0;
 
-        int sum = IntStream.range(0, arr.length)   // stream of indices 0..len-1
-                .filter(i -> i % 2 != 0) // keep only odd indices
-                .map(i -> arr[i])        // map index -> value
-                .sum();                  // sum them
+//         sum = IntStream.range(0, arr.length)   // stream of indices 0..len-1
+//                .filter(i -> i % 2 != 0) // keep only odd indices
+//                .map(i -> arr[i])        // map index -> value
+//                .sum();                  // sum them
 
         System.out.println("Sum of odd index elements = " + sum);
+
+        for(int i = 1;i<arr.length;i++){
+            if(i%2!=0){
+                sum+=arr[i];
+            }
+        }
     }
 }
