@@ -6,9 +6,11 @@ public class Palindrome {
 
 
 
-        for(int i = s.length()-1 ;i>=0;i--){
+       /* for(int i = s.length()-1 ;i>=0;i--){
             palindrome+=s.charAt(i);
-        }
+        }*/
+
+         palindrome = new StringBuilder(s).reverse().toString();
 
         System.out.println("check string >> "+palindrome);
 
@@ -16,6 +18,7 @@ public class Palindrome {
             System.out.println("True");
         else
             System.out.println("False");
+
 
     }
 }
