@@ -11,6 +11,9 @@ public class LargestOddNumberInString {
 
         num = "52";
         System.out.println("Largest Odd Number: " + largestOddNumber(num));
+
+        num = "789654125";
+        System.out.println("Largest Odd Number: " + largestOddNumber(num));
     }
 
     private static String largestOddNumber(String num) {
