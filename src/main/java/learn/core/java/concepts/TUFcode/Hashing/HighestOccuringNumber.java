@@ -14,19 +14,20 @@ public class HighestOccuringNumber {
 
         int hash[] = new int[maxIndex+1];
 
-        for(int i=0; i<maxIndex;i++){
+        for(int i=0; i< nums.length;i++){
             hash[nums[i]]++;
         }
 
-        int maxCount = 0, elt = -1;
+        int maxFreq = 0, mostfrequentelement = -1;
 
-        for(int i=0; i<maxIndex;i++){
-            if(hash[i]>maxCount){
-                maxCount=hash[i];
-                elt=i;
+        for(int i=0; i<hash.length;i++){
+
+            if(hash[i]>maxFreq){
+                maxFreq=hash[i];
+                mostfrequentelement=i;
             }
         }
 
-        System.out.println("Hightest Frequency = "+elt);
+        System.out.println("Hightest Frequency = "+ mostfrequentelement);
     }
 }
