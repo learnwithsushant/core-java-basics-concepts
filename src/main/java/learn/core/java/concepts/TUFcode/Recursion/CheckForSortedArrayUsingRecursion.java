@@ -44,8 +44,8 @@ public class CheckForSortedArrayUsingRecursion {
     private static boolean isSortedArray(int start, int next, ArrayList<Integer> nums){
         if(nums.size() == 1)
             return true;
-        else if (nums.size() == 2 && nums.get(0)==nums.get(1)) {
-            return true;
+        else if (nums.size() == 2 && nums.get(0)>nums.get(1)) {
+            return false;
         }else if((next==nums.size()-1)&&(nums.get(start)<nums.get(next))){
             return true;
 
