@@ -3,7 +3,7 @@ package learn.core.java.concepts.TUFcode.advancedSection.StringOperation;
 public class ReverseSentense {
 
     public static void main(String[] args) {
-        String s= "I have the fastest vector";
+        String s= "I   have the     fastest      vector";
 
         System.out.println(reverseIt(s));
 
