@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SelectionSort {
     public static void main(String[] args) {
-        int[] nums = {7, 4, 1, 5, 3};
+        int[] nums = {7, 4, 1, 5, 3,8,9,5,4,1,7,9};
 
         nums = selectionSort(nums);
 
@@ -15,7 +15,7 @@ public class SelectionSort {
         int size = nums.length;
         for(int i = 0; i<=size-2;i++){
             int min = i;
-            for(int j = i;j<=size-1;j++){
+            for(int j = i+1;j<=size-1;j++){
                 
                 if(nums[j]<nums[min]){
                     min=j;
