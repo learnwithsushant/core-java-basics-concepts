@@ -1,57 +1,95 @@
 package learn.core.java.concepts.TUFcode.advancedSection.Sorting;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class MergeSort {
+    // Function to merge two sorted halves of the array
+    public void merge(int[] arr, int low, int mid, int high) {
+        // Temporary array to store merged elements
+        List<Integer> temp = new ArrayList<>();
+        int left = low;
+        int right = mid + 1;
 
-    // Not working
-
-    public static void main(String[] args) {
-
-        int[] nums = {8, 9, 6, 5, 3, 7, 1, 8, 4, 5};
-
-        divide(nums,0,nums.length-1);
-
-    }
-
-    public static void jointAndSort(int[] nums, int start,int mid, int end){
-
-        int merge[] = new int[end-start+1];
-        int left=start;
-        int right = mid+1;
-        int index = 0;
-
-        while(left <= mid && right<=end){
-            if(nums[left]<=nums[right]){
-                merge[index++]=nums[left++];
-            }else {
-                merge[index++]=nums[right++];
+        // Loop until subarrays are exhausted
+        while (left <= mid && right <= high) {
+            // Compare left and right elements
+            if (arr[left] <= arr[right]) {
+                // Add left element to temp
+                temp.add(arr[left]);
+                // Move left pointer
+                left++;
+            } else {
+                // Add right element to temp
+                temp.add(arr[right]);
+                // Move right pointer
+                right++;
             }
         }
 
-        while(left<=mid){
-            merge[index++]=nums[left++];
+        // Adding the remaining elements of left half
+        while (left <= mid) {
+            temp.add(arr[left]);
+            left++;
         }
 
-        while(right<=end){
-            merge[index++]=nums[right++];
+        // Adding the remaining elements of right half
+        while (right <= high) {
+            temp.add(arr[right]);
+            right++;
         }
 
-        for (int i = 0, j = 0;i< merge.length;i++){
-            nums[j]=merge[i];
+        // Transferring the sorted elements to arr
+        for (int i = low; i <= high; i++) {
+            arr[i] = temp.get(i - low);
         }
-
-        Arrays.stream(nums).forEach(System.out::println);
-
     }
 
-    public static void divide(int[] nums, int start, int end){
-        if(start>=end)
+    // Helper function to perform merge sort from low to high
+    public void mergeSortHelper(int[] arr, int low, int high) {
+        // Base case: if the array has only one element
+        if (low >= high)
             return;
 
-        int mid = start + (end-start)/2;
-        divide(nums,start,mid);
-        divide(nums,mid+1, end);
-        jointAndSort(nums,start,mid,end);
+        // Find the middle index
+        int mid = (low + high) / 2;
+        // Recursively sort the left half
+        mergeSortHelper(arr, low, mid);
+        // Recursively sort the right half
+        mergeSortHelper(arr, mid + 1, high);
+        // Merge the sorted halves
+        merge(arr, low, mid, high);
+    }
+
+    // Function to perform merge sort on the given array
+    public int[] mergeSort(int[] nums) {
+        int n = nums.length; // Size of array
+
+        // Perform Merge sort on the whole array
+        mergeSortHelper(nums, 0, n - 1);
+
+        // Return the sorted array
+        return nums;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {9, 4, 7, 6, 3, 1, 5};
+        int n = arr.length;
+
+        System.out.println("Before Sorting Array: ");
+        for (int i = 0; i < n; i++)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+
+        // Create an instance of the Solution class
+        MergeSort sol = new MergeSort();
+        // Function call to sort the array
+        int[] sortedArr = sol.mergeSort(arr);
+
+        System.out.println("After Sorting Array: ");
+        for (int i = 0; i < n; i++)
+            System.out.print(sortedArr[i] + " ");
+        System.out.println();
     }
 }
