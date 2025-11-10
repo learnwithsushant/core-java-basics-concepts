@@ -36,6 +36,21 @@ public class TraverseLinkedList {
         int lengthOfLL = getLengthOfLinkedList(headNode);
         System.out.println("Length of LinkedList "+lengthOfLL);
         elements.stream().forEach(System.out::println);
+
+        headNode =deleteHeadNode(headNode);
+        lengthOfLL = getLengthOfLinkedList(headNode);
+        System.out.println("Length of LinkedList "+lengthOfLL);
+        elements.stream().forEach(System.out::println);
+    }
+
+    private static ListNode deleteHeadNode(ListNode headNode) {
+
+        ListNode pointer = headNode.next;
+
+        headNode= null;
+
+        return pointer;
+
     }
 
     private static int getLengthOfLinkedList(ListNode headNode) {
