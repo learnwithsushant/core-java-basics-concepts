@@ -41,6 +41,32 @@ public class TraverseLinkedList {
         lengthOfLL = getLengthOfLinkedList(headNode);
         System.out.println("Length of LinkedList "+lengthOfLL);
         elements.stream().forEach(System.out::println);
+
+        ListNode tailNode = deleteTailNode(headNode);
+        lengthOfLL = getLengthOfLinkedList(headNode);
+        System.out.println("Tail node  is: --- :"+tailNode.val);
+        System.out.println("Length of LinkedList "+lengthOfLL);
+        System.out.println("lengthOfLL-------"+lengthOfLL);
+
+
+    }
+
+    private static ListNode deleteTailNode(ListNode headNode) {
+
+        ListNode pointer1 =  headNode, pointer2=null;
+
+        if(headNode.next==null)
+            return deleteHeadNode(headNode);
+
+        while (pointer1.next!=null){
+            pointer2=pointer1;
+            pointer1=pointer1.next;
+        }
+
+        pointer2.next=null;
+        System.out.println("New tail node is = "+pointer2.val);
+        return pointer1;
+
     }
 
     private static ListNode deleteHeadNode(ListNode headNode) {
