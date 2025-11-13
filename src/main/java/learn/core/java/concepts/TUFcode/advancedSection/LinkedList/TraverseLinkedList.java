@@ -37,17 +37,87 @@ public class TraverseLinkedList {
         System.out.println("Length of LinkedList "+lengthOfLL);
         elements.stream().forEach(System.out::println);
 
-        headNode =deleteHeadNode(headNode);
+/*        headNode =deleteHeadNode(headNode);
         lengthOfLL = getLengthOfLinkedList(headNode);
         System.out.println("Length of LinkedList "+lengthOfLL);
-        elements.stream().forEach(System.out::println);
+        elements.stream().forEach(System.out::println);*/
 
-        ListNode tailNode = deleteTailNode(headNode);
+ /*       ListNode tailNode = deleteTailNode(headNode);
         lengthOfLL = getLengthOfLinkedList(headNode);
         System.out.println("Tail node  is: --- :"+tailNode.val);
         System.out.println("Length of LinkedList "+lengthOfLL);
-        System.out.println("lengthOfLL-------"+lengthOfLL);
+        System.out.println("lengthOfLL-------"+lengthOfLL);*/
 
+    /*    // Delete Kth element
+
+        ListNode kthElement = deletekthNode(headNode,5);
+        System.out.println("Node deleted is: "+kthElement.val);*/
+
+        // Delete by value
+        ListNode nodeWithValue = deleteByValue(headNode,0);
+        if(nodeWithValue!=null){
+            elements = LLTraversal(headNode);
+            lengthOfLL = getLengthOfLinkedList(headNode);
+            System.out.println("Length of LinkedList after delete by value "+lengthOfLL);
+            elements.stream().forEach(System.out::println);
+        }else {
+            System.out.println("Element not in linked List");
+        }
+
+
+
+
+    }
+
+    private static ListNode deleteByValue(ListNode headNode, int expectedNum) {
+
+        ListNode pointer1 =  headNode, pointer2=null;
+        boolean gotValue = false;
+
+        while (pointer1!=null){
+          if(pointer1.val==expectedNum){
+              gotValue = true;
+               break;
+
+           }else {
+               pointer2=pointer1;
+               pointer1=pointer1.next;
+           }
+        }
+        if(gotValue){
+            ListNode nodeToDelete = pointer1;
+            pointer1=pointer1.next;
+            pointer2.next=pointer1;
+
+            nodeToDelete.next = null;
+
+            return nodeToDelete;
+
+        }else
+            return null;
+
+
+    }
+
+    private static ListNode deletekthNode(ListNode headNode,int kthelet) {
+        ListNode pointer1 =  headNode, pointer2=null;
+
+        if(headNode.next==null)
+            return deleteHeadNode(headNode);
+
+        for(int i = 1;i<kthelet;i++){
+            pointer2=pointer1;
+            pointer1=pointer1.next;
+
+        }
+
+        ListNode nodeToDelete = pointer1;
+        pointer1=pointer1.next;
+        pointer2.next=pointer1;
+
+        nodeToDelete.next = null;
+
+        return nodeToDelete;
 
     }
 
