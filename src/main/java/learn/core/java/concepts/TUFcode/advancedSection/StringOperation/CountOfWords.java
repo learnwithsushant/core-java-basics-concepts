@@ -9,7 +9,7 @@ public class CountOfWords {
 
         System.out.println(" Lenght of string: "+countWords(" No of Words are "));
 
-    }
+    } 
 
     public static int countWords(String s) {
         // Your code goes here
