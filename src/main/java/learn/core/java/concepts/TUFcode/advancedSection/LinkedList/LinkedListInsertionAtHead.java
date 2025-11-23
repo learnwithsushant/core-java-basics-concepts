@@ -17,6 +17,10 @@ public class LinkedListInsertionAtHead {
 
         headNode = addNewElement(headNode,5);
 
+        lengthOfLL = manager.getLengthOfLinkedList(headNode);
+
+        System.out.println("New length of LinkedList is %s".formatted(lengthOfLL));
+
 
     }
 
