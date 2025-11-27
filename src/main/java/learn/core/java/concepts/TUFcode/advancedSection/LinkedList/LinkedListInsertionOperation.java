@@ -61,5 +61,27 @@ public class LinkedListInsertionOperation {
 
     }
 
+    private static ListNode insertAtkthNode(ListNode headNode,int kthelet,int value) {
+        ListNode pointer1 =  headNode, pointer2=null;
+        ListNode newNode = new ListNode(value);
+
+        if(headNode.next==null)
+            return addNewHeadElement(headNode,value);
+
+        for(int i = 1;i<kthelet;i++){
+            pointer2=pointer1;
+            pointer1=pointer1.next;
+
+        }
+
+
+        pointer2.next=newNode;
+        newNode.next = pointer1;
+
+
+        return headNode;
+
+    }
+
 
 }
