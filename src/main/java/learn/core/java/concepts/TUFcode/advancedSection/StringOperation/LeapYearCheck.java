@@ -15,7 +15,7 @@ public class LeapYearCheck {
             System.out.println(year + " is NOT a Leap Year.");
         }
     }
-    // Method to check if a year is a leap year
+    // Method to check if a year is a leap year or not
     private static boolean isLeapYear(int year) {
         return (year % 400 == 0) ||
                 (year % 4 == 0 && year % 100 != 0);
