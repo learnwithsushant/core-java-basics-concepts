@@ -25,7 +25,41 @@ public class LinkedListInsertionOperation {
 
         System.out.println("New length of LinkedList is %s".formatted(lengthOfLL));
 
+        System.out.println("Adding node with value 55 at position 3");
 
+        headNode = insertAtkthNode(headNode,3,55);
+
+        elements = manager.travereLinkList(headNode);
+
+        elements.stream().forEach(System.out::println);
+
+        int index = findTheIndexOfNodeWithValue(headNode,55);
+
+        headNode = insertAtkthNode(headNode,index,44);
+
+        elements = manager.travereLinkList(headNode);
+
+        elements.stream().forEach(System.out::println);
+
+
+    }
+
+    private static int findTheIndexOfNodeWithValue(ListNode headNode,int value) {
+
+        ListNode pointer1 =  headNode;
+        int index = 0;
+
+        while(pointer1.next!=null){
+            ++index;
+            if(pointer1.val==value)
+                break;
+
+            pointer1=pointer1.next;
+
+        }
+
+
+        return index;
     }
 
     private static ListNode addNewHeadElement(ListNode headNode, int i) {
