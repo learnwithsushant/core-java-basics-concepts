@@ -20,4 +20,5 @@ public class ConsecutiveOnes {
         System.out.println("Consecutive no. of 1's :: "+longest);
 
     }
+
 }
