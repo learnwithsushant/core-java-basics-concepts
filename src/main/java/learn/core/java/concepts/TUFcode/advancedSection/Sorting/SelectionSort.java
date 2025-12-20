@@ -3,6 +3,8 @@ package learn.core.java.concepts.TUFcode.advancedSection.Sorting;
 import java.util.Arrays;
 
 public class SelectionSort {
+
+    // Selection sort
     public static void main(String[] args) {
         int[] nums = {7, 4, 1, 5, 3,8,9,5,4,1,7,9};
 
