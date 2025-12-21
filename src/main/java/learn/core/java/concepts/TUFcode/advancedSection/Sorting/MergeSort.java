@@ -6,6 +6,7 @@ import java.util.List;
 
 public class MergeSort {
     // Function to merge two sorted halves of the array
+
     public void merge(int[] arr, int low, int mid, int high) {
         // Temporary array to store merged elements
         List<Integer> temp = new ArrayList<>();
@@ -87,7 +88,7 @@ public class MergeSort {
         // Function call to sort the array
         int[] sortedArr = sol.mergeSort(arr);
 
-        System.out.println("After Sorting Array: ");
+        System.out.println("Result After Sorting Array: ");
         for (int i = 0; i < n; i++)
             System.out.print(sortedArr[i] + " ");
         System.out.println();
