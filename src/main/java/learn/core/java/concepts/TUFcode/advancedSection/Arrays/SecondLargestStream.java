@@ -13,7 +13,7 @@ public class SecondLargestStream {
                 .boxed()                                // convert int → Integer
                 .distinct()                             // remove duplicates
                 .sorted(Comparator.reverseOrder())       // sort descending
-                .skip(1)                                 // skip largest
+                .skip(1)                                 // skip largest to get the second largest
                 .findFirst()                             // get next one!
                 //.orElseThrow(() -> new RuntimeException("No second largest"));
                 .orElse(-1);
