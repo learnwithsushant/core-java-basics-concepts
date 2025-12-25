@@ -17,6 +17,7 @@ public class SecondLargestStream {
                 .findFirst()                             // get next one!
                 //.orElseThrow(() -> new RuntimeException("No second largest"));
                 .orElse(-1);
+
         System.out.println("Second Largest: " + secondLargest);
     }
     }
