@@ -14,7 +14,7 @@ public class PrimeNumber {
         System.out.println("No. of Prime numbers >>> "+count);
     }
 
-    private static  boolean checkForPrime(int n){
+    static  boolean checkForPrime(int n){
         if (n <= 1) {
             return false;
         }
