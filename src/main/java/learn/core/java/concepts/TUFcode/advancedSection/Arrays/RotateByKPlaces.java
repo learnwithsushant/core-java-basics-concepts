@@ -20,7 +20,7 @@ public class RotateByKPlaces {
         rotateArray(nums, 0, k - 1);
 
         rotateArray(nums, k, n - 1);
-
+        // reversing the entire array
         rotateArray(nums, 0, n - 1);
 
         return nums;
