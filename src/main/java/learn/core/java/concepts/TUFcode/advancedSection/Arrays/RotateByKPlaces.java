@@ -16,9 +16,9 @@ public class RotateByKPlaces {
     public static int[] splitArrayAndRotate(int[] nums, int k) {
         int n = nums.length;
         k = k % n;
-
+        // reversing 1st half
         rotateArray(nums, 0, k - 1);
-
+        // reversing 2nd half
         rotateArray(nums, k, n - 1);
         // reversing the entire array
         rotateArray(nums, 0, n - 1);
