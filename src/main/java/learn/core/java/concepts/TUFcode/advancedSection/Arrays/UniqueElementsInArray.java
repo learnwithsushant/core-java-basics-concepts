@@ -13,6 +13,6 @@ public class UniqueElementsInArray {
             }
         }
 
-        System.out.println("Unique elemnts in array are:"+i+1);
+        System.out.println("Unique elemnts in array :"+i+1);
     }
 }
