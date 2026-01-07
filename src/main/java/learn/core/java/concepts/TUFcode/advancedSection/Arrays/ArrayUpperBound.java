@@ -7,7 +7,7 @@ public class ArrayUpperBound {
     public static void main(String[] args) {
         int[] nums = {2, 4, 4, 0, 10};
 
-        System.out.println("Element is present at largest index: "+ performReverseLinearSearch(nums,4) );
+        System.out.println("Element present at largest index is: "+ performReverseLinearSearch(nums,4) );
     }
 
 
