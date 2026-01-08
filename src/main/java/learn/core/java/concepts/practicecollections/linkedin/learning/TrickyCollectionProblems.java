@@ -16,7 +16,7 @@ public class TrickyCollectionProblems {
 
   //      System.out.println("Index with required sum> "+ returnIndices(Arrays.asList(0,1,5,3,3,2,4),6));
 
-   //     printPattern2(4);
+       printPattern2(4);
 
         removeStr();
 
