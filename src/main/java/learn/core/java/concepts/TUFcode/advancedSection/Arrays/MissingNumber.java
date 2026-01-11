@@ -13,7 +13,9 @@ public class MissingNumber {
         for(int i : nums)
             sumOfElement+=i;
 
-        System.out.println("Missing number: "+(sumOfNNumbers-sumOfElement));
+        int missingNumber = sumOfNNumbers-sumOfElement;
+
+        System.out.println("Missing number: "+ missingNumber);
 
 
 
