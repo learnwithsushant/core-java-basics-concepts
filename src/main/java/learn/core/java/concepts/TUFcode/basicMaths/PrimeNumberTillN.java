@@ -19,5 +19,7 @@ public class PrimeNumberTillN {
 
         }
         primeNumber.stream().forEach(System.out::println);
+
+
     }
 }
