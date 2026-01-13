@@ -60,7 +60,7 @@ public class PrimeInRange {
         // then it must also have a divisor 'n/d' which is less than its square root.
         for (int i = 3; i <= Math.sqrt(n); i += 2) {
             if (n % i == 0) {
-                return false; // Found a divisor, so it's not prime
+                return false;
             }
         }
         return true;
