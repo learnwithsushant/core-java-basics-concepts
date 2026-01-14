@@ -5,6 +5,7 @@ public class LargestDigit {
         System.out.println("Largest Digit >>>"+ getLargestDigit(12345));
     }
 
+    // find largest digit in series
     private static int getLargestDigit(int n) {
         int largestDigit = 0;
 
